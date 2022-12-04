@@ -1,8 +1,13 @@
-{ inputs, config, lib, ... }:
+{
+  inputs,
+  config,
+  lib,
+  ...
+}:
 with lib; {
   options.home-manager.users = mkOption {
     type = types.attrsOf (types.submoduleWith {
-      modules = [ ];
+      modules = [];
       specialArgs = {
         inherit inputs;
         nixos = config;
