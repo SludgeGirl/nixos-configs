@@ -4,6 +4,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     deploy-rs.url = "github:serokell/deploy-rs";
+    tree-input.url = "github:kittywitch/tree";
+    tree-input.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -11,19 +13,28 @@
     nixpkgs,
     home-manager,
     deploy-rs,
+    tree-input,
     ...
   } @ inputs: let
     defaultModules = [
       home-manager.nixosModules.home-manager
     ];
+    defaultSpecialArgs = {
+      tree = metaTree.impure;
+      pureTree = metaTree.pure;
+      inherit inputs;
+    };
     activateNixOS_x64_64-linux = deploy-rs.lib.x86_64-linux.activate.nixos;
+
+    mkTree = inputs.tree-input.tree;
+    metaTree = mkTree ((import ./treeConfig.nix {}) // {inherit inputs;});
   in rec {
     legacyPackages."x86_64-linux".mossball =
       nixosConfigurations.mossball.config.system.build.toplevel;
 
     nixosConfigurations.mossball = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
+      specialArgs = defaultSpecialArgs;
       modules = defaultModules ++ [./hosts/mossball];
     };
 

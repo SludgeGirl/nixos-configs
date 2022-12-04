@@ -93,7 +93,28 @@
       "inputs": {
         "deploy-rs": "deploy-rs",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "tree-input": "tree-input"
+      }
+    },
+    "tree-input": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1670085069,
+        "narHash": "sha256-IO9HcAjncPp/0sUGcCUWVwa0XoBVFQKx+oY+8EBRcTc=",
+        "owner": "kittywitch",
+        "repo": "tree",
+        "rev": "501675588cb663a9bd18056002de697f4e91b667",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kittywitch",
+        "repo": "tree",
+        "type": "github"
       }
     },
     "utils": {

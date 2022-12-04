@@ -4,15 +4,15 @@
 {
   config,
   pkgs,
-  inputs,
+  tree,
   ...
 }: {
-  imports = [
-    ../../profiles/base
-    ../../profiles/sshd.nix
+  imports = with tree; [
+    profiles.base
+    profiles.sshd
 
-    ../../users/sludge.nix
-    ../../users/root.nix
+    users.sludge
+    users.root
 
     ./hardware-configuration.nix
     ./zfs.nix
