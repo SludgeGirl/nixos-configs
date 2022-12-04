@@ -1,5 +1,5 @@
 {config, ...}: {
-  users.users.xerz = {
+  users.users.sludge = {
     uid = 1000;
     isNormalUser = true;
     extraGroups = [
