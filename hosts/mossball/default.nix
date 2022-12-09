@@ -18,6 +18,10 @@
     ./zfs.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    vim
+  ];
+
   users.users.root.initialHashedPassword = "$6$9Uzf03z9g.tel3dL$wj0l0gPjd0ptWhKf4UheFndgEbArfEZtXqsqDstOMnY/GNJZjHFb5LzXkIaUD6AcR.KU.bwR1.usOzQDh95nc/";
   system.stateVersion = "22.05";
 }
