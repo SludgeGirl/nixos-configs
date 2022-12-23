@@ -10,6 +10,9 @@
   imports = with tree; [
     profiles.base
     profiles.sshd
+    profiles.pixelmon
+    profiles.nextcloud
+    profiles.mailserver
 
     users.sludge
     users.root
@@ -19,9 +22,14 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    vim
+    vim htop
+    screen jdk11
   ];
+
+  networking.hostName = "mossball";
 
   users.users.root.initialHashedPassword = "$6$9Uzf03z9g.tel3dL$wj0l0gPjd0ptWhKf4UheFndgEbArfEZtXqsqDstOMnY/GNJZjHFb5LzXkIaUD6AcR.KU.bwR1.usOzQDh95nc/";
   system.stateVersion = "22.05";
+
+  services.nextcloud.hostName = "nextcloud.sludge.network";
 }
