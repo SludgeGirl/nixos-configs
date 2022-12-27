@@ -22,8 +22,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    vim htop
-    screen jdk11
+    vim
+    htop
+    screen
+    jdk11
     btop
   ];
 

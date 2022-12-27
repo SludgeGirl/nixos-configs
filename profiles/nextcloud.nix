@@ -1,6 +1,8 @@
-{config, pkgs, ...}:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud25;
@@ -49,8 +51,8 @@
   };
 
   systemd.services."nextcloud-setup" = {
-    requires = [ "postgresql.service" ];
-    after = [ "postgresql.service" ];
+    requires = ["postgresql.service"];
+    after = ["postgresql.service"];
   };
 
   security.acme = {
@@ -63,5 +65,5 @@
     enableACME = true;
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [80 443];
 }

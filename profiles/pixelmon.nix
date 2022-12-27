@@ -1,20 +1,22 @@
-{config, pkgs, ...}:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   users.users.pixelmon = {
     isNormalUser = true;
     group = "pixelmon";
   };
   users.groups.pixelmon = {};
 
-  environment.systemPackages = [ pkgs.screen pkgs.jdk11 ];
+  environment.systemPackages = [pkgs.screen pkgs.jdk11];
   systemd.services.pixelmon = {
     enable = true;
     description = "Runs the pixelmon server";
     wantedBy = ["multi-user.target"];
     after = ["network.target"];
     unitConfig = {
-      After =  "network.target";
+      After = "network.target";
       StartLimitIntervalSec = "5";
     };
     serviceConfig = {
@@ -31,7 +33,7 @@
   services.postfix.origin = "mail.sludge.network";
 
   networking.firewall = {
-    allowedUDPPorts = [ 25565 ];
-    allowedTCPPorts = [ 25565 ];
+    allowedUDPPorts = [25565];
+    allowedTCPPorts = [25565];
   };
 }
