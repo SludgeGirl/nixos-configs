@@ -24,6 +24,7 @@
   environment.systemPackages = with pkgs; [
     vim htop
     screen jdk11
+    btop
   ];
 
   networking.hostName = "mossball";

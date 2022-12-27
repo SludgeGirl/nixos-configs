@@ -6,18 +6,20 @@
     package = pkgs.nextcloud25;
     enableBrokenCiphersForSSE = false;
     autoUpdateApps.enable = true;
+    hostName = "nextcloud.sludge.network";
 
     https = true;
 
     extraAppsEnable = true;
     extraApps = with pkgs.nextcloud25Packages.apps; {
-      inherit twofactor_webauthn mail;
+      inherit mail;
     };
 
     config = {
       overwriteProtocol = "https";
+      defaultPhoneRegion = "GB";
 
-      adminpassFile = "${pkgs.writeText "adminpass" "5rR%FowfE8cmZ2NCdKkYADeiRnqTm@fXjAsQRXUgiGL4xU&C@%"}";
+      adminpassFile = "/var/nextcloud/admin-pass";
       adminuser = "sludge";
       objectstore.s3 = {
         enable = true;
@@ -27,9 +29,28 @@
         region = "fra1";
         port = 443;
         key = "DO00AH9QKRELVLMBF6R3";
-        secretFile = "/var/nextcloud-objectstore-digitalocean-secret";
+        secretFile = "/var/nextcloud/objectstore-digitalocean-secret";
       };
+
+      dbtype = "pgsql";
+      dbuser = "nextcloud";
+      dbhost = "/run/postgresql";
+      dbname = "nextcloud";
     };
+  };
+
+  services.postgresql = {
+    enable = true;
+    initialScript = pkgs.writeText "initscript" ''
+      CREATE ROLE nextcloud WITH LOGIN PASSWORD 'nextcloud' CREATEDB;
+      CREATE DATABASE nextcloud;
+      GRANT ALL PRIVILEGES ON DATABASE nextcloud TO nextcloud;
+    '';
+  };
+
+  systemd.services."nextcloud-setup" = {
+    requires = [ "postgresql.service" ];
+    after = [ "postgresql.service" ];
   };
 
   security.acme = {
