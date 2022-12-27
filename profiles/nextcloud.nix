@@ -14,7 +14,7 @@
 
     extraAppsEnable = true;
     extraApps = with pkgs.nextcloud25Packages.apps; {
-      inherit mail;
+      inherit;
     };
 
     config = {
