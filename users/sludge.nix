@@ -1,4 +1,8 @@
-{config, pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   users.users.sludge = {
     uid = 1000;
     isNormalUser = true;

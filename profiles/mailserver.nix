@@ -15,6 +15,8 @@
     fqdn = "mail.sludge.network";
     domains = ["sludge.network"];
 
+    certificateDomains = ["imap.sludge.network" "smtp.sludge.network"];
+
     # A list of all login accounts. To create the password hashes, use
     # nix-shell -p mkpasswd --run 'mkpasswd -sm bcrypt'
     loginAccounts = {
