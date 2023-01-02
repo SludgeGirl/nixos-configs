@@ -13,6 +13,7 @@
     profiles.pixelmon
     profiles.nextcloud
     profiles.mailserver
+    profiles.zsh
 
     users.sludge
     users.root

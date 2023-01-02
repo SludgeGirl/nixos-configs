@@ -1,7 +1,8 @@
-{config, ...}: {
+{config, pkgs, ...}: {
   users.users.sludge = {
     uid = 1000;
     isNormalUser = true;
+    shell = pkgs.zsh;
     extraGroups = [
       "wheel"
       "disk"
