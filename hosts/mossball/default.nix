@@ -14,6 +14,7 @@
     profiles.nextcloud
     profiles.mailserver
     profiles.zsh
+    profiles.murmur
 
     users.sludge
     users.root
@@ -36,4 +37,5 @@
   system.stateVersion = "22.05";
 
   services.nextcloud.hostName = "nextcloud.sludge.network";
+  services.timesyncd.enable = true;
 }
