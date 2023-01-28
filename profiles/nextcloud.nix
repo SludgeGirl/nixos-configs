@@ -17,6 +17,8 @@
       inherit;
     };
 
+    maxUploadSize = "2G";
+
     config = {
       overwriteProtocol = "https";
       defaultPhoneRegion = "GB";
