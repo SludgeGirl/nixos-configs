@@ -11,7 +11,7 @@
 
   environment.systemPackages = [pkgs.screen pkgs.jdk11];
   systemd.services.pixelmon = {
-    enable = true;
+    enable = false;
     description = "Runs the pixelmon server";
     wantedBy = ["multi-user.target"];
     after = ["network.target"];
