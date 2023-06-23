@@ -5,6 +5,7 @@
   config,
   pkgs,
   tree,
+  inputs,
   ...
 }: {
   imports = with tree; [
@@ -15,6 +16,7 @@
     profiles.mailserver
     profiles.zsh
     profiles.murmur
+    profiles.site
 
     users.sludge
     users.root
@@ -30,6 +32,12 @@
     jdk11
     btop
   ];
+
+  nixpkgs = {
+    overlays = [
+      inputs.sludge-site.overlay
+    ];
+  };
 
   networking.hostName = "mossball";
 

@@ -5,6 +5,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     deploy-rs.url = "github:serokell/deploy-rs";
     tree-input.url = "github:kittywitch/tree";
+    sludge-site.url = "git+ssh://git@github.com/SludgeGirl/Site";
     tree-input.inputs.nixpkgs.follows = "nixpkgs";
   };
 
