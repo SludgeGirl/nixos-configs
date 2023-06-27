@@ -5,7 +5,7 @@
 }: {
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud26;
+    package = pkgs.nextcloud27;
     enableBrokenCiphersForSSE = false;
     autoUpdateApps.enable = true;
     hostName = "nextcloud.sludge.network";
