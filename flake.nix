@@ -6,6 +6,7 @@
     deploy-rs.url = "github:serokell/deploy-rs";
     tree-input.url = "github:kittywitch/tree";
     sludge-site.url = "git+ssh://git@github.com/SludgeGirl/Site";
+    git-talk.url = "git+ssh://git@github.com/SludgeGirl/git-talk";
     tree-input.inputs.nixpkgs.follows = "nixpkgs";
   };
 
