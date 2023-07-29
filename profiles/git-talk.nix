@@ -1,24 +1,27 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }: {
   services.nginx.virtualHosts."slides.sludge.network" = {
-    locations."/git" = {
-        proxyPass = "http://127.0.0.1:4000";
-        forceSSL = true;
-        enableACME = true;
+    enableACME = true;
+    forceSSL = true;
+
+    locations."/" = {
+        proxyPass = "http://localhost:4000";
 
         extraConfig =
             "proxy_ssl_server_name on;"
         ;
     };
-  };
+  };  virtualisation.oci-containers.backend = "podman";
 
-  systemd.services.git-talk = {
-    enable = true;
-    path = "${inputs.git-talk.defaultPackage.${pkgs.system}}";
-    script = "${pkgs.npm} start"
+  virtualisation.oci-containers.containers = {
+    git-talk = {
+      image = "alectair/git-talk";
+      autoStart = true;
+      ports = [ "4000:4000" ];
+      extraOptions = [ "--pull=always" ];
+    };
   };
 }

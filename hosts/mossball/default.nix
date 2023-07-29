@@ -11,12 +11,14 @@
   imports = with tree; [
     profiles.base
     profiles.sshd
+    profiles.podman
     profiles.pixelmon
     profiles.nextcloud
     profiles.mailserver
     profiles.zsh
     profiles.murmur
     profiles.site
+    profiles.git-talk
 
     users.sludge
     users.root
