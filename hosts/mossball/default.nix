@@ -33,6 +33,7 @@
     screen
     jdk11
     btop
+    neofetch
   ];
 
   nixpkgs = {
