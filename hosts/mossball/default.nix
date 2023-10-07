@@ -18,7 +18,7 @@
     profiles.zsh
     profiles.murmur
     profiles.site
-    profiles.git-talk
+    profiles.znc
 
     users.sludge
     users.root
