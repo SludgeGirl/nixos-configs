@@ -19,6 +19,7 @@
     profiles.murmur
     profiles.site
     profiles.znc
+    profiles.thelounge
 
     users.sludge
     users.root
