@@ -39,13 +39,16 @@
       modules = defaultModules ++ [./hosts/mossball];
     };
 
-    deploy.nodes = {
-      mossball = {
-        hostname = "94.130.48.76";
-        profiles.system = {
-          user = "root";
-          sshUser = "root";
-          path = activateNixOS_x64_64-linux nixosConfigurations.mossball;
+    deploy = {
+      nodes = {
+        mossball = {
+          hostname = "94.130.48.76";
+          profiles.system = {
+            user = "root";
+            sshUser = "root";
+            path = activateNixOS_x64_64-linux nixosConfigurations.mossball;
+            remoteBuild = true;
+          };
         };
       };
     };
