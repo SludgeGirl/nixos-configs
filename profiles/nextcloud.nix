@@ -15,13 +15,14 @@
     extraApps = with pkgs.nextcloud25Packages.apps; {
       inherit;
     };
+    extraOptions = {
+      overwriteProtocol = "https";
+      defaultPhoneRegion = "GB";
+    };
 
     maxUploadSize = "2G";
 
     config = {
-      overwriteProtocol = "https";
-      defaultPhoneRegion = "GB";
-
       adminpassFile = "/var/nextcloud/admin-pass";
       adminuser = "sludge";
       objectstore.s3 = {
