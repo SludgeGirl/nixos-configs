@@ -7,11 +7,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1703087360,
-        "narHash": "sha256-0VUbWBW8VyiDRuimMuLsEO4elGuUw/nc2WDeuO1eN1M=",
+        "lastModified": 1704875591,
+        "narHash": "sha256-eWRLbqRcrILgztU/m/k7CYLzETKNbv0OsT2GjkaNm8A=",
         "owner": "serokell",
         "repo": "deploy-rs",
-        "rev": "b709d63debafce9f5645a5ba550c9e0983b3d1f7",
+        "rev": "1776009f1f3fb2b5d236b84d9815f2edee463a9b",
         "type": "github"
       },
       "original": {
@@ -43,11 +43,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1704383912,
-        "narHash": "sha256-Be7O73qoOj/z+4ZCgizdLlu+5BkVvO2KO299goZ9cW8=",
+        "lastModified": 1705708511,
+        "narHash": "sha256-3f4BkRY70Fj7yvuo87c4QQPAjnt571g2wJ50jY7hnYc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "26b8adb300e50efceb51fff6859a1a6ba1ade4f7",
+        "rev": "ce4b88c465d928f4f8b75d0920f1788d5b65ca94",
         "type": "github"
       },
       "original": {
@@ -74,11 +74,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1704476563,
-        "narHash": "sha256-ciERvWIrn+MPxC81T3zI0PK72LajCaJKfOS18JXp0Bk=",
+        "lastModified": 1705786013,
+        "narHash": "sha256-f+1abQAInayvzSA0qJxiVd07VPxud5FMghAGP4yOuKU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e03da1011feb6ed955d3888edd076156d7125a3a",
+        "rev": "1c53ca6485bfb8333a98aee1d7695a13d648a70e",
         "type": "github"
       },
       "original": {
@@ -119,11 +119,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1704477220,
-        "narHash": "sha256-QC+At+Bnuy+DeVR4wwPoSXJv5LAzQJTh0V6T6aHp6FE=",
+        "lastModified": 1705241400,
+        "narHash": "sha256-4oLUhO6QI2nxt1LYgvw8LYN1ybBZG1vafD/ODz3Uq4o=",
         "ref": "refs/heads/main",
-        "rev": "7267e4a28f368332acc602159ec61d3fe590cafb",
-        "revCount": 7,
+        "rev": "5a9d652858ae228be7a973da6fe13028aaa40534",
+        "revCount": 18,
         "type": "git",
         "url": "ssh://git@github.com/SludgeGirl/Site"
       },
