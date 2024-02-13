@@ -15,7 +15,7 @@
     extraApps = with pkgs.nextcloud25Packages.apps; {
       inherit;
     };
-    extraOptions = {
+    settings = {
       overwriteProtocol = "https";
       defaultPhoneRegion = "GB";
     };
