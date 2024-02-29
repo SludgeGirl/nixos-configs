@@ -26,6 +26,7 @@
 
     ./hardware-configuration.nix
     ./zfs.nix
+    ./networking.nix
   ];
 
   environment.systemPackages = with pkgs; [
