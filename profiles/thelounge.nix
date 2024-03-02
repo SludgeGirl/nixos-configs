@@ -6,6 +6,12 @@
   services.thelounge = {
     enable = true;
     public = false;
+
+    extraConfig = {
+      prefetch = true;
+      host = "127.0.0.1";
+      prefetchMaxImageSize = 8192;
+    };
   };
 
   services.nginx.virtualHosts."irc.sludge.network" = {
@@ -13,7 +19,7 @@
     enableACME = true;
 
     locations."/" = {
-      proxyPass = "http://localhost:9000";
+      proxyPass = "http://127.0.0.1:9000";
     };
   };
 
