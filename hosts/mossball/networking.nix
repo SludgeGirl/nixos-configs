@@ -1,8 +1,8 @@
 {
   networking = {
-    useDHCP = true;
-    usePredictableInterfaceNames = false;
-    interfaces.enp0s31f6 = {
+    useDHCP = false;
+    usePredictableInterfaceNames = true;
+    interfaces.eth0 = {
       useDHCP = false;
       ipv4.addresses = [
         {
