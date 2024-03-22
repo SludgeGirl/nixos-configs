@@ -11,6 +11,11 @@
       prefetch = true;
       host = "127.0.0.1";
       prefetchMaxImageSize = 8192;
+      reverseProxy = true;
+
+      fileUpload = {
+        enable = true;
+      };
     };
   };
 
