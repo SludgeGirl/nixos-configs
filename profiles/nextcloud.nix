@@ -45,11 +45,18 @@
 
   services.postgresql = {
     enable = true;
-    initialScript = pkgs.writeText "initscript" ''
-      CREATE ROLE nextcloud WITH LOGIN PASSWORD 'nextcloud' CREATEDB;
-      CREATE DATABASE nextcloud;
-      GRANT ALL PRIVILEGES ON DATABASE nextcloud TO nextcloud;
-    '';
+
+    ensureDatabases = ["hedgedoc" "nextcloud"];
+    ensureUsers = [
+      {
+        name = "nextcloud";
+        ensureDBOwnership = true;
+      }
+      {
+        name = "hedgedoc";
+        ensureDBOwnership = true;
+      }
+    ];
   };
 
   systemd.services."nextcloud-setup" = {

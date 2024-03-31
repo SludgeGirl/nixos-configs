@@ -20,6 +20,7 @@
     profiles.site
     profiles.znc
     profiles.thelounge
+    profiles.hedgedoc
 
     users.sludge
     users.root
@@ -51,4 +52,10 @@
 
   services.nextcloud.hostName = "nextcloud.sludge.network";
   services.timesyncd.enable = true;
+
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+  };
 }
