@@ -38,7 +38,7 @@
 
     defaultGateway6 = {
       address = "fe80::1";
-      interface = "enp0s31f6";
+      interface = "eth0";
     };
 
     defaultGateway = "94.130.48.65";
