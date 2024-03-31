@@ -20,5 +20,6 @@
     dnsProvider = "rfc2136";
     credentialsFile = "/var/glauca.env";
     reloadServices = ["murmur"];
+    group = "murmur";
   };
 }
