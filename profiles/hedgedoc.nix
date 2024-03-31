@@ -11,6 +11,11 @@
       domain = "notes.sludge.network";
       useSSL = false;
       protocolUseSSL = true;
+
+      allowEmailRegister = false;
+      allowAnonymous = false;
+      defaultPermission = "private";
+
       db = {
         dialect = "postgres";
         host = "/run/postgresql";
