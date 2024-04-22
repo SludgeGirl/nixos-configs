@@ -43,11 +43,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1712390667,
-        "narHash": "sha256-ebq+fJZfobqpsAdGDGpxNWSySbQejRwW9cdiil6krCo=",
+        "lastModified": 1713809191,
+        "narHash": "sha256-9Tb5JKcacjxNF1f7gsu/4l4Gxa2qflq9x1hhdl10iwM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b787726a8413e11b074cde42704b4af32d95545c",
+        "rev": "e866aae5bbbcfe6798ca05d3004a4e62f1828954",
         "type": "github"
       },
       "original": {
@@ -74,11 +74,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1712508287,
-        "narHash": "sha256-RGPoDLnsiGOOpmsGBewHbh05g1f9lcEdCstVfO4bCwc=",
+        "lastModified": 1713812120,
+        "narHash": "sha256-1lC2d6CubGaNLOKJC1nwJrTI8ibKkEJQt0Fvz80giS8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1155526bf88902322c15365278d9a80499d17d2a",
+        "rev": "07f7637a6964ef1094c4314f92164642501ffd63",
         "type": "github"
       },
       "original": {
@@ -119,11 +119,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1712510059,
-        "narHash": "sha256-1ADpQfCRalKpBBgQyMhJdlEV1p3sDvdlOv2IDO/l55s=",
+        "lastModified": 1712510356,
+        "narHash": "sha256-hYVxget0L8lD1A5hycFvR0C58aEAbbmXI8kHYvI0tqo=",
         "ref": "refs/heads/main",
-        "rev": "86407c1346e3418d8fe034a5928f611dcba747ac",
-        "revCount": 20,
+        "rev": "a4e4629fc692a2095f2769ef3da66bb4a0e62b46",
+        "revCount": 21,
         "type": "git",
         "url": "ssh://git@github.com/SludgeGirl/Site"
       },
