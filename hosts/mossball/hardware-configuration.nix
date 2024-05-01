@@ -45,7 +45,7 @@
   };
 
   fileSystems."/boot/efis/nvme-SAMSUNG_MZVLB512HAJQ-00000_S3W8NA0M398290-part1" = {
-    device = "/dev/disk/by-uuid/1F4E-75AC";
+    device = "/dev/disk/by-uuid/DEC3-7953";
     fsType = "vfat";
   };
 
