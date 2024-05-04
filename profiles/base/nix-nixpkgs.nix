@@ -6,7 +6,7 @@
   ...
 }: {
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.git;
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     extraOptions = ''
       experimental-features = nix-command flakes
