@@ -67,7 +67,7 @@
 
   security.acme = {
     acceptTerms = true;
-    defaults.email = "admin@sludge.network";
+    defaults.email = "sludge-mossball@protonmail.com";
   };
 
   services.nginx.virtualHosts."nextcloud.sludge.network" = {
