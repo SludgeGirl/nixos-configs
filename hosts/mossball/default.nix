@@ -71,4 +71,10 @@
   # Move and do something with the detected virus
   # The defaults just detect it
   systemd.services.clamdscan.serviceConfig.ExecStart = lib.mkForce "${pkgs.clamav}/bin/clamdscan --move=/root/found_viruses/ --multiscan --fdpass --infected --allmatch ${lib.concatStringsSep " " config.services.clamav.scanner.scanDirectories}";
+  systemd.services.clamav-daemon.serviceConfig = {
+    IOSchedulingPriority = 7;
+    CPUSchedulingPolicy = 5;
+    CPUQuota = "30%";
+    Nice = 19;
+  };
 }
