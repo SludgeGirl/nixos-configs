@@ -12,7 +12,7 @@
     https = true;
 
     extraAppsEnable = true;
-    extraApps = with pkgs.nextcloud25Packages.apps; {
+    extraApps = with pkgs.nextcloud29Packages.apps; {
       inherit;
     };
     settings = {
@@ -25,16 +25,6 @@
     config = {
       adminpassFile = "/var/nextcloud/admin-pass";
       adminuser = "sludge";
-      objectstore.s3 = {
-        enable = true;
-        autocreate = true;
-        bucket = "sludge";
-        hostname = "fra1.digitaloceanspaces.com";
-        region = "fra1";
-        port = 443;
-        key = "DO00AH9QKRELVLMBF6R3";
-        secretFile = "/var/nextcloud/objectstore-digitalocean-secret";
-      };
 
       dbtype = "pgsql";
       dbuser = "nextcloud";
