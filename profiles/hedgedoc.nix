@@ -26,7 +26,7 @@
 
   services.nginx.virtualHosts."notes.sludge.network" = {
     forceSSL = true;
-    enableACME = true;
+    useACMEHost = "sludge.network";
     locations."/".proxyPass = "http://localhost:3300";
     locations."/socket.io/" = {
       proxyPass = "http://localhost:3300";

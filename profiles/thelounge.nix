@@ -21,7 +21,7 @@
 
   services.nginx.virtualHosts."irc.sludge.network" = {
     forceSSL = true;
-    enableACME = true;
+    useACMEHost = "sludge.network";
 
     locations."/" = {
       proxyPass = "http://127.0.0.1:9000";

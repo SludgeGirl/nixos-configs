@@ -55,14 +55,9 @@
     after = ["postgresql.service"];
   };
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "sludge-mossball@protonmail.com";
-  };
-
   services.nginx.virtualHosts."nextcloud.sludge.network" = {
     forceSSL = true;
-    enableACME = true;
+    useACMEHost = "sludge.network";
   };
 
   networking.firewall.allowedTCPPorts = [80 443];

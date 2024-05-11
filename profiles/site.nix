@@ -7,6 +7,6 @@
   services.nginx.virtualHosts."sludge.network" = {
     root = "${inputs.sludge-site.defaultPackage.${pkgs.system}}";
     forceSSL = true;
-    enableACME = true;
+    useACMEHost = "sludge.network";
   };
 }

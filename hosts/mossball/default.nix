@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
+  security,
   pkgs,
   tree,
   inputs,
@@ -76,5 +77,19 @@
     CPUSchedulingPolicy = 5;
     CPUQuota = "30%";
     Nice = 19;
+  };
+
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "sludge-mossball@protonmail.com";
+
+    certs."sludge.network" = {
+      dnsProvider = "rfc2136";
+      domain = "*.sludge.network";
+      extraDomainNames = ["sludge.network"];
+      credentialsFile = "/var/glauca.env";
+      reloadServices = ["nginx"];
+      group = "nginx";
+    };
   };
 }
