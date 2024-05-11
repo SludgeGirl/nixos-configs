@@ -34,17 +34,10 @@
   };
 
   services.postgresql = {
-    enable = true;
-    package = pkgs.postgresql_14;
-
-    ensureDatabases = ["hedgedoc" "nextcloud"];
+    ensureDatabases = ["nextcloud"];
     ensureUsers = [
       {
         name = "nextcloud";
-        ensureDBOwnership = true;
-      }
-      {
-        name = "hedgedoc";
         ensureDBOwnership = true;
       }
     ];

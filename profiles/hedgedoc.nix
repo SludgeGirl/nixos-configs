@@ -34,4 +34,14 @@
       extraConfig = "proxy_ssl_server_name on;";
     };
   };
+
+  services.postgresql = {
+    ensureDatabases = ["hedgedoc"];
+    ensureUsers = [
+      {
+        name = "hedgedoc";
+        ensureDBOwnership = true;
+      }
+    ];
+  };
 }
