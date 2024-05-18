@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }: {
@@ -36,7 +37,7 @@
     serviceConfig = {
       Type = "oneshot";
       SuccessExitStatus = "0";
-      ExecStart = "find /var/lib/thelounge/uploads/ -type f -mtime +7 -print -delete";
+      ExecStart = "${lib.getBin pkgs.findutils}/bin/find /var/lib/thelounge/uploads/ -type f -mtime +7 -print -delete";
     };
   };
 
