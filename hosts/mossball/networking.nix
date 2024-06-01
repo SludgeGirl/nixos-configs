@@ -17,10 +17,6 @@
           address = "2a01:4f8:10b:25e0::1";
           prefixLength = 64;
         }
-        {
-          address = "fe80::921b:eff:febd:9b39";
-          prefixLength = 64;
-        }
       ];
       ipv4.routes = [
         {
