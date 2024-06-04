@@ -11,6 +11,7 @@
     extraConfig = {
       prefetch = true;
       host = "127.0.0.1";
+      bind = "2a01:4f8:10b:25e0::1";
       prefetchMaxImageSize = 8192;
       reverseProxy = true;
 
