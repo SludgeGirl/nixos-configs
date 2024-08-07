@@ -16,7 +16,7 @@
     profiles.podman
     profiles.pixelmon
     profiles.nextcloud
-    # profiles.mailserver
+    profiles.mailserver
     profiles.zsh
     profiles.murmur
     profiles.site
