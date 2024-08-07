@@ -23,6 +23,7 @@
     profiles.znc
     profiles.thelounge
     profiles.hedgedoc
+    profiles.forgejo
 
     users.sludge
     users.root
