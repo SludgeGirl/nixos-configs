@@ -35,7 +35,6 @@
       };
       actions = {
         ENABLED = true;
-        DEFAULT_ACTIONS_URL = "github";
       };
       server = {
         ROOT_URL = "https://git.sludge.network/"; 
