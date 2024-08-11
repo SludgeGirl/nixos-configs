@@ -52,6 +52,14 @@
       labels = [
         "ubuntu-latest:docker://node:16-bullseye"
       ];
+      settings = {
+        container = {
+          network = "bridge";
+        };
+      };
     };
   };
+
+  networking.firewall.allowedUDPPorts = [ 35943 ];
+  networking.firewall.allowedTCPPorts = [ 35943 ];
 }

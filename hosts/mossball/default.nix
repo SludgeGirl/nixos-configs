@@ -40,6 +40,7 @@
     jdk11
     btop
     neofetch
+    zstd
   ];
 
   nixpkgs = {
