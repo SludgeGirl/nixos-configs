@@ -5,7 +5,7 @@
 }: {
   services.nginx.virtualHosts."git.sludge.network" = {
     forceSSL = true;
-    useACMEHost = "sludge.network";
+    enableACME = true;
 
     extraConfig = ''
       client_max_body_size 512M;
@@ -25,8 +25,10 @@
       mailer = {
         ENABLED = true;
         SMTP_ADDR = "mail.sludge.network";
+        SMTP_PORT = "465";
         FROM = "no-reply@sludge.network";
         USER = "no-reply@sludge.network";
+        ENABLE_HELO = false;
       };
       service.DISABLE_REGISTRATION = true;
       actions = {
