@@ -30,7 +30,9 @@
         USER = "no-reply@sludge.network";
         ENABLE_HELO = false;
       };
-      service.DISABLE_REGISTRATION = true;
+      service = {
+        REGISTER_EMAIL_CONFIRM = true;
+      };
       actions = {
         ENABLED = true;
         DEFAULT_ACTIONS_URL = "github";
