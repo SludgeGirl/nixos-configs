@@ -20,7 +20,6 @@
     profiles.zsh
     profiles.murmur
     profiles.site
-    profiles.znc
     profiles.thelounge
     profiles.hedgedoc
     profiles.forgejo
