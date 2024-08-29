@@ -57,12 +57,12 @@
       ];
       settings = {
         container = {
-          network = "bridge";
+          network = "host";
         };
       };
     };
   };
 
-  networking.firewall.allowedUDPPorts = [ 35943 ];
-  networking.firewall.allowedTCPPorts = [ 35943 ];
+  networking.firewall.allowedUDPPorts = [ 35943 35705 ];
+  networking.firewall.allowedTCPPorts = [ 35943 35705 ];
 }
