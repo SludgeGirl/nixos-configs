@@ -33,6 +33,9 @@
       service = {
         REGISTER_EMAIL_CONFIRM = true;
       };
+      federation = {
+        ENABLED = true;
+      };
       actions = {
         ENABLED = true;
       };
