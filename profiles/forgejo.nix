@@ -8,7 +8,7 @@
     enableACME = true;
 
     extraConfig = ''
-      client_max_body_size 512M;
+      client_max_body_size 2048M;
     '';
 
     locations."/" = {
@@ -56,7 +56,9 @@
       # Obtaining the path to the runner token file may differ
       tokenFile = "/var/forgejo/runner";
       labels = [
-        "ubuntu-latest:docker://node:16-bullseye"
+        "ubuntu-latest:docker://node:18-bullseye"
+        "debian-latest:docker://node:18-bullseye"
+        "fedora-latest:docker://node:18-bullseye"
       ];
       settings = {
         container = {

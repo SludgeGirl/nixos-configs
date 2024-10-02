@@ -24,6 +24,7 @@
     profiles.hedgedoc
     profiles.forgejo
     profiles.sludgebin
+    profiles.gregtech
 
     users.sludge
     users.root
@@ -70,7 +71,7 @@
   services.clamav.updater.enable = true;
 
   # Run the scanner every half hour
-  services.clamav.scanner.interval = "*-*-* *:00,30:00";
+  # services.clamav.scanner.interval = "*-*-* *:00,30:00";
   # Move and do something with the detected virus
   # The defaults just detect it
   systemd.services.clamdscan.serviceConfig.ExecStart = lib.mkForce "${pkgs.clamav}/bin/clamdscan --move=/root/found_viruses/ --multiscan --fdpass --infected --allmatch ${lib.concatStringsSep " " config.services.clamav.scanner.scanDirectories}";
