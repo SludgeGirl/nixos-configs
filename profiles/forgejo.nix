@@ -39,6 +39,7 @@
       actions = {
         ENABLED = true;
       };
+      service.DISABLE_REGISTRATION = true;
       server = {
         ROOT_URL = "https://git.sludge.network/"; 
         DOMAIN = "git.sludge.network";
