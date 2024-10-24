@@ -119,11 +119,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1712510356,
-        "narHash": "sha256-hYVxget0L8lD1A5hycFvR0C58aEAbbmXI8kHYvI0tqo=",
+        "lastModified": 1729277818,
+        "narHash": "sha256-P+nHAuK5LwjVD6BzzWqeYNtUxk1Pb+Xb57MLsDiIIOE=",
         "ref": "refs/heads/main",
-        "rev": "a4e4629fc692a2095f2769ef3da66bb4a0e62b46",
-        "revCount": 21,
+        "rev": "69ba0cf02a1d4cb5534fcee6efd6246045fc425d",
+        "revCount": 22,
         "type": "git",
         "url": "ssh://git@github.com/SludgeGirl/Site"
       },
