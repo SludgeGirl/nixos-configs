@@ -45,26 +45,10 @@
         DOMAIN = "git.sludge.network";
       };
     };
-    mailerPasswordFile = "/var/forgejo/mail";
-  };
 
-  services.gitea-actions-runner = {
-    package = pkgs.forgejo-actions-runner;
-    instances.default = {
-      enable = true;
-      name = "monolith";
-      url = "https://git.sludge.network";
-      # Obtaining the path to the runner token file may differ
-      tokenFile = "/var/forgejo/runner";
-      labels = [
-        "ubuntu-latest:docker://node:18-bullseye"
-        "debian-latest:docker://node:18-bullseye"
-        "fedora-latest:docker://node:18-bullseye"
-      ];
-      settings = {
-        container = {
-          network = "host";
-        };
+    secrets = {
+      mailer = {
+        PASSWD = "/var/forgejo/mail";
       };
     };
   };
