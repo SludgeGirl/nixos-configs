@@ -24,7 +24,6 @@
     profiles.hedgedoc
     profiles.forgejo
     profiles.sludgebin
-    profiles.gregtech
     profiles.opengist
 
     users.sludge
