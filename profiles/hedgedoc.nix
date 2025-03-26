@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  services,
   ...
 }: {
   services.hedgedoc = {

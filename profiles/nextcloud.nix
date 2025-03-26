@@ -12,8 +12,8 @@
     https = true;
 
     extraAppsEnable = true;
-    extraApps = with pkgs.nextcloud29Packages.apps; {
-      inherit;
+    extraApps = with pkgs.nextcloud30Packages.apps; {
+      inherit deck;
     };
     settings = {
       overwriteProtocol = "https";
