@@ -12,7 +12,7 @@
     '';
 
     locations."/" = {
-      proxyPass = "http://127.0.0.1:${toString config.services.forgejo.settings.server.HTTP_PORT}";
+      proxyPass = "http://127.0.0.1:9800";
     };
   };
 
@@ -41,8 +41,11 @@
       };
       service.DISABLE_REGISTRATION = true;
       server = {
-        ROOT_URL = "https://git.sludge.network/"; 
-        DOMAIN = "git.sludge.network";
+        ROOT_URL = "https://git.sludge.network/";
+        DOMAIN = "localhost";
+      };
+      security = {
+        REVERSE_PROXY_TRUSTED_PROXIES = "127.0.0.0/8,::1/128";
       };
     };
 
@@ -58,7 +61,7 @@
     instances.default = {
       enable = true;
       name = "monolith";
-      url = "https://git.sludge.network";
+      url = "http://127.0.0.1:${toString config.services.forgejo.settings.server.HTTP_PORT}";
       # Obtaining the path to the runner token file may differ
       tokenFile = "/var/forgejo/runner";
       labels = [
@@ -71,6 +74,16 @@
           network = "host";
         };
       };
+    };
+  };
+
+  virtualisation.oci-containers.containers.forgejo-anubis = {
+    image = "ghcr.io/techarohq/anubis:latest";
+    autoStart = true;
+    extraOptions = ["--pull=always" "--network=host"];
+    environment = {
+      BIND = ":9800";
+      TARGET = "http://localhost:${toString config.services.forgejo.settings.server.HTTP_PORT}";
     };
   };
 
