@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
-  security,
   pkgs,
   tree,
   inputs,
@@ -64,6 +63,12 @@
     enable = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
+    commonHttpConfig = ''
+      log_format extended '$remote_addr [$time_local] '
+                      '"$request_method $scheme://$http_host$request_uri $server_protocol" $status $body_bytes_sent '
+                      '"$http_referer" "$http_user_agent"';
+      access_log /var/log/nginx/access.log extended;
+      '';
   };
 
   services.clamav.daemon.enable = true;
