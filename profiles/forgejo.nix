@@ -77,13 +77,14 @@
     };
   };
 
-  virtualisation.oci-containers.containers.forgejo-anubis = {
+  virtualisation.oci-containers.containers.anubis-forgejo = {
     image = "ghcr.io/techarohq/anubis:latest";
     autoStart = true;
     extraOptions = ["--pull=always" "--network=host"];
     environment = {
       BIND = ":9800";
       TARGET = "http://localhost:${toString config.services.forgejo.settings.server.HTTP_PORT}";
+      METRICS_BIND = ":9801";
     };
   };
 
