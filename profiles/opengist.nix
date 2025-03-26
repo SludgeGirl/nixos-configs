@@ -8,7 +8,7 @@
     useACMEHost = "sludge.network";
 
     locations."/" = {
-      proxyPass = "http://0.0.0.0:6157";
+      proxyPass = "http://0.0.0.0:9804";
 
       extraConfig = "proxy_ssl_server_name on;";
     };
@@ -29,6 +29,17 @@
       volumes = [
         "/var/opengist:/opengist"
       ];
+    };
+  };
+
+  virtualisation.oci-containers.containers.anubis-opengist = {
+    image = "ghcr.io/techarohq/anubis:latest";
+    autoStart = true;
+    extraOptions = ["--pull=always" "--network=host"];
+    environment = {
+      BIND = ":9804";
+      TARGET = "http://localhost:6157";
+      METRICS_BIND = ":9805";
     };
   };
 }
